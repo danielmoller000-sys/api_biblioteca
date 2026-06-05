@@ -30,7 +30,7 @@ public class LibroService {
         libroRepository.deleteById(id);
     }
 
-    // Módulo B
+    // Módulo B - búsqueda flexible por título
     public List<Libro> buscarPorTitulo(String titulo) {
         if (titulo == null || titulo.isEmpty()) {
             return libroRepository.findAll();
