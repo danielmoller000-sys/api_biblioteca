@@ -12,7 +12,7 @@ public interface LibroRepository extends JpaRepository<Libro, Long> {
     // Método derivado (Módulo B)
     List<Libro> findByTituloContainingIgnoreCase(String titulo);
 
-    // Consulta JPQL compleja (Módulo C)
+    // Consulta JPQL personalizada (Módulo C)
     @Query("SELECT COUNT(l) FROM Libro l JOIN l.categorias c WHERE c.id = :categoriaId")
     Long contarLibrosPorCategoria(@Param("categoriaId") Long categoriaId);
 }
