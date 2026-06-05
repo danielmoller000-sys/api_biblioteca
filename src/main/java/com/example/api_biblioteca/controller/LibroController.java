@@ -67,7 +67,7 @@ public class LibroController {
         return ResponseEntity.ok(libroService.buscarPorTitulo(titulo));
     }
 
-    // MÓDULO C: Uso de JPQL (@Query)
+    // MÓDULO C: conteo por categoría con JPQL (@Query)
     @GetMapping("/count/categoria/{id}")
     public ResponseEntity<Long> contarPorCategoria(@PathVariable Long id) {
         return ResponseEntity.ok(libroService.contarPorCategoria(id));
