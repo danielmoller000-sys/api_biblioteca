@@ -21,7 +21,7 @@ public class Libro {
 
     private String isbn;
 
-    // Relación N a 1 (Módulo A)
+    // Relación N a 1 (Módulo A - entidad central)
     @ManyToOne
     @JoinColumn(name = "autor_id")
     @NotNull(message = "El libro debe tener un autor asignado")
