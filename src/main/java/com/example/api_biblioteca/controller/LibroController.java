@@ -61,6 +61,12 @@ public class LibroController {
         return ResponseEntity.notFound().build();
     }
 
+    // MÓDULO A: libros de un autor (usa la relación @ManyToOne)
+    @GetMapping("/autor/{id}")
+    public ResponseEntity<List<Libro>> getByAutor(@PathVariable Long id) {
+        return ResponseEntity.ok(libroService.buscarPorAutor(id));
+    }
+
     // MÓDULO B: Query Params (?titulo=Java)
     @GetMapping("/buscar")
     public ResponseEntity<List<Libro>> buscar(@RequestParam(required = false) String titulo) {

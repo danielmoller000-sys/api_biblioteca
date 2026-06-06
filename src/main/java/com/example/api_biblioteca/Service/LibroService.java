@@ -38,6 +38,11 @@ public class LibroService {
         return libroRepository.findByTituloContainingIgnoreCase(titulo);
     }
 
+    // Módulo A - libros de un autor concreto (usa la relación @ManyToOne)
+    public List<Libro> buscarPorAutor(Long idAutor) {
+        return libroRepository.findByAutorId(idAutor);
+    }
+
     // Módulo C
     public Long contarPorCategoria(Long idCategoria) {
         return libroRepository.contarLibrosPorCategoria(idCategoria);
