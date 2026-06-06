@@ -20,12 +20,4 @@ public class GlobalExceptionHandler {
                 errors.put(error.getField(), error.getDefaultMessage()));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
     }
-    
-    @ExceptionHandler(jakarta.persistence.EntityNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleNotFoundException(jakarta.persistence.EntityNotFoundException ex) {
-        Map<String, String> error = new HashMap<>();
-        error.put("error", "Recurso no encontrado");
-        error.put("mensaje", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
-    }
 }
