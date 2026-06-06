@@ -51,4 +51,8 @@ public class AutorController {
         }
         return ResponseEntity.notFound().build();
     }
+    @GetMapping("/buscar")
+    public ResponseEntity<List<Autor>> buscar(@RequestParam(required = false) String nacionalidad) {
+        return ResponseEntity.ok(autorService.buscarPorNacionalidad(nacionalidad));
+    }
 }

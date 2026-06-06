@@ -29,4 +29,10 @@ public class AutorService {
     public void deleteById(Long id) {
         autorRepository.deleteById(id);
     }
+    public List<Autor> buscarPorNacionalidad(String nacionalidad) {
+        if (nacionalidad == null || nacionalidad.isEmpty()) {
+            return autorRepository.findAll();
+        }
+        return autorRepository.findByNacionalidadContainingIgnoreCase(nacionalidad);
+    }
 }
