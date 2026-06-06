@@ -74,7 +74,7 @@ Relaciones:
 
 ## Endpoints
 
-Base: `/api/v1/libros`
+### Libros — `/api/v1/libros`
 
 | Método | Ruta | Descripción | Auth |
 |--------|------|-------------|------|
@@ -83,8 +83,30 @@ Base: `/api/v1/libros`
 | POST | `/api/v1/libros` | Crea un libro (201) | Sí |
 | PUT | `/api/v1/libros/{id}` | Actualiza un libro (200 / 404) | Sí |
 | DELETE | `/api/v1/libros/{id}` | Elimina un libro (204 / 404) | Sí |
+| GET | `/api/v1/libros/autor/{id}` | Lista los libros de un autor (usa la relación) | No |
 | GET | `/api/v1/libros/buscar?titulo=` | Busca libros por título (param opcional) | No |
 | GET | `/api/v1/libros/count/categoria/{id}` | Cuenta libros de una categoría (JPQL) | No |
+
+### Autores — `/api/v1/autores`
+
+| Método | Ruta | Descripción | Auth |
+|--------|------|-------------|------|
+| GET | `/api/v1/autores` | Lista todos los autores | No |
+| GET | `/api/v1/autores/{id}` | Obtiene un autor por id (200 / 404) | No |
+| POST | `/api/v1/autores` | Crea un autor (201) | Sí |
+| PUT | `/api/v1/autores/{id}` | Actualiza un autor (200 / 404) | Sí |
+| DELETE | `/api/v1/autores/{id}` | Elimina un autor (204 / 404) | Sí |
+| GET | `/api/v1/autores/buscar?nacionalidad=` | Busca autores por nacionalidad (param opcional) | No |
+
+### Categorías — `/api/v1/categorias`
+
+| Método | Ruta | Descripción | Auth |
+|--------|------|-------------|------|
+| GET | `/api/v1/categorias` | Lista todas las categorías | No |
+| GET | `/api/v1/categorias/{id}` | Obtiene una categoría por id (200 / 404) | No |
+| POST | `/api/v1/categorias` | Crea una categoría (201) | Sí |
+| PUT | `/api/v1/categorias/{id}` | Actualiza una categoría (200 / 404) | Sí |
+| DELETE | `/api/v1/categorias/{id}` | Elimina una categoría (204 / 404) | Sí |
 
 ### Ejemplo: crear un libro (requiere auth)
 
